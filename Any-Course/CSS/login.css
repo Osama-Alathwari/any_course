@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.login {
+    background-image: linear-gradient(135deg, #02333c 30%, #99bcc4 90%);
+    position: relative;
+    z-index: 3;
+    padding: 100px;
+    color: #999;
+    font-size: 1rem;
+    text-align: center;
+    height: 150vh;
+}
+
+.login form input {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    line-height: 50px;
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login form *:not([type="button"]) {
+    margin-bottom: 20px;
+}
+
+.login form input[type="email"]:focus,
+.login form input[type="email"]:active,
+.login form input[type="password"]:focus,
+.login form input[type="password"]:active {
+    border-color: #CCC;
+
+}
+
+.login form input[type="submit"],
+.login form input[type="button"] {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 20px;
+    background-color: #1787e0;
+    background-size: 20px 20px;
+    background-image: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.15) 25%,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0.15) 75%,
+            rgba(0, 0, 0, 0) 75%,
+            rgba(0, 0, 0, 0));
+    border: 1px solid #1787e0;
+    border-bottom-width: 3px;
+    color: white;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.login form input[type="submit"]:hover,
+.login form input[type="button"]:hover {
+    background-size: 40px 40px;
+}
+
+
+.login-title {
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+    margin: 0 0 20px;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.Container {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.Container::before,
+.Container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    transform: scale(0.9) translate(0, 0);
+    transition: all 0.3s ease;
+}
+
+.Container::after {
+    transition-delay: 0.05s;
+}
+
+.Container:hover::before {
+    transform: scale(0.96) translate(0, 16px);
+    z-index: -1;
+}
+
+.Container:hover::after {
+    transform: scale(0.92) translate(0, 32px);
+    z-index: -2;
+}

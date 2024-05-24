@@ -1,0 +1,298 @@
+/*  Start Global */
+
+* {
+    box-sizing: border-box;
+
+}
+
+:root {
+    --main-color: #2196f3;
+    --alt-color: #1787e0;
+    --main-transition-duration: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    direction: rtl;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global */
+
+/* Start Header */
+.header {
+    --main-height: 72px;
+    background-color: white;
+    box-shadow: 0 0 10px #DDD;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    direction: ltr;
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header .logo {
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: bold;
+    height: var(--main-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    .header .logo {
+        width: 100%;
+    }
+}
+
+.header .main-nav {
+    display: flex;
+
+}
+
+@media (max-width:767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+}
+
+@media (max-width:651px) {
+    .header {
+        --main-height: 35px;
+    }
+}
+
+.header .main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--main-height);
+    position: relative;
+    color: black;
+    padding: 0 30px;
+    transition: var(--main-transition-duration);
+    overflow: hidden;
+}
+
+@media (max-width:767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40;
+    }
+}
+
+.header .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition-duration);
+}
+
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+/* End Header */
+
+/* Start Section */
+.section {
+    position: relative;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    z-index: -1;
+    transform: skewY(19deg);
+}
+
+.section .container {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding-bottom: 120px;
+}
+
+.section .text {
+    flex: 1;
+}
+
+@media (max-width: 991px) {
+    .section .text {
+        text-align: center;
+    }
+}
+
+.section .text h1 {
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+@media (max-width: 767px) {
+    .section .text h1 {
+        font-size: 28px;
+    }
+}
+
+.section .text p {
+    font-size: 34px;
+    line-height: 1.6;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+
+@media (max-width: 991px) {
+    .section .text p {
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .section .text p {
+        font-size: 18px;
+    }
+}
+
+.section .image img {
+    width: 500px;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .section .image {
+        /* display: none; */
+        width: 200;
+    }
+
+    .section .image img {
+        width: 300px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 651px) {
+
+
+    .section .image img {
+        width: 200px;
+        max-width: 100%;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .section .container {
+        margin-top: 40px;
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    .section .image img {
+        width: 400px;
+        max-width: 100%;
+    }
+
+}
+
+.section .go-to {
+    color: var(--main-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition-duration);
+}
+
+.section .go-to:hover {
+    color: var(--alt-color);
+
+}
+
+.section .go-to i {
+    animation: bouncing 1.5s infinite;
+}
+
+@keyframes bouncing {
+
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0);
+    }
+
+    40%,
+    60% {
+        transform: translateX(20px);
+    }
+}
+
+/* End Section */
